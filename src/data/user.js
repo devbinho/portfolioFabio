@@ -71,7 +71,7 @@ const INFO = {
 			description:
 				"Sistema de gestão de academias criado para o curso de Analise e Desenvolvimento de Sistemas utilizando laravel.",
 			logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos@0.0.3/src/php/php.png",
-			linkText: "View Project",
+			linkText: "Abrir Projeto",
 			link: "https://github.com/fabioborbas/ProjetoInterdisciplinar-Laravel",
 		},
 	],
