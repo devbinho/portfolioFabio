@@ -2,14 +2,14 @@ const SEO = [
 	{
 		page: "home",
 		description:
-			"Sou um desenvolvedor backend com especialização em Node.js. Tenho experiência na construção de aplicações web escaláveis, seguras e confiáveis, utilizando vários frameworks e tecnologias.",
+			"Sou um desenvolvedor frontend com especialização em React e Next.js. Tenho experiência na construção de aplicações web escaláveis, seguras e confiáveis, utilizando vários frameworks e tecnologias.",
 		keywords: ["Tharindu", "Tharindu N", "Tharindu Nayanajith"],
 	},
 
 	{
 		page: "about",
 		description:
-			"Sou um desenvolvedor backend com especialização em Node.js. Tenho experiência na construção de aplicações web escaláveis, seguras e confiáveis, utilizando vários frameworks e tecnologias.",
+			"Sou um desenvolvedor frontend com especialização em React e Next.js. Tenho experiência na construção de aplicações web escaláveis, seguras e confiáveis, utilizando vários frameworks e tecnologias.",
 		keywords: ["Tharindu", "Tharindu N", "Tharindu Nayanajith"],
 	},
 

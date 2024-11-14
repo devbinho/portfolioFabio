@@ -15,7 +15,7 @@ const INFO = {
 	homepage: {
 		title: "Desenvolvedor full-stack de aplicativos web e móveis, e astronauta amador.",
 		description:
-			"Sou um desenvolvedor backend com especialização em Node.js. Tenho experiência na construção de aplicações web escaláveis, seguras e confiáveis, utilizando vários frameworks e tecnologias. Gosto de resolver problemas complexos e aprender novas habilidades. Sou apaixonado por criar código de alta qualidade que segue as melhores práticas e padrões da indústria. Estou sempre em busca de novos desafios e oportunidades para crescer como desenvolvedor.",
+			"Sou um desenvolvedor frontend com especialização em React e Next.js. Tenho experiência na construção de aplicações web escaláveis, seguras e confiáveis, utilizando vários frameworks e tecnologias. Gosto de resolver problemas complexos e aprender novas habilidades. Sou apaixonado por criar código de alta qualidade que segue as melhores práticas e padrões da indústria. Estou sempre em busca de novos desafios e oportunidades para crescer como desenvolvedor.",
 	},
 
 	about: {
