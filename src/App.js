@@ -14,7 +14,7 @@ import { TRACKING_ID } from "./data/tracking";
 import "./app.css";
 
 function App() {
-	const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode'));
+	const [darkMode, setDarkMode] = useState(false);
 
 	// Carrega o tema do localStorage quando o componente é montado
 	useEffect(() => {
