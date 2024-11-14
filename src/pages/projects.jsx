@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 import NavBar from "../components/common/navBar";
@@ -11,7 +11,8 @@ import SEO from "../data/seo";
 
 import "./styles/projects.css";
 
-const Projects = () => {
+const Projects = (props) => {
+	const {darkMode, toggleDarkMode} = props 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -29,8 +30,10 @@ const Projects = () => {
 				/>
 			</Helmet>
 
+			<div className={darkMode ? 'dark-theme' : 'light-theme'}>
+
 			<div className="page-content">
-				<NavBar active="projects" />
+			<NavBar active="projects" darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 				<div className="content-wrapper">
 					<div className="projects-logo-container">
 						<div className="projects-logo">
@@ -49,6 +52,7 @@ const Projects = () => {
 						<Footer />
 					</div>
 				</div>
+			</div>
 			</div>
 		</React.Fragment>
 	);

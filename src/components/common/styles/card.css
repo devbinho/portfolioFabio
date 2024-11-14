@@ -21,8 +21,21 @@
 	color: var(--tertiary-color);
 }
 
+.dark-theme .card-icon {
+	font-size: 15px;
+	color: var(--quaternary-color);
+}
+
+
 .card-title {
 	color: var(--secondary-color);
+	font-size: 14px;
+	padding-left: 20px;
+	font-weight: 650;
+}
+
+.dark-theme .card-title {
+	color: var(--quaternary-color);
 	font-size: 14px;
 	padding-left: 20px;
 	font-weight: 650;

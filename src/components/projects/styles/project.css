@@ -1,5 +1,16 @@
 @import "../../../data/styles.css";
+/* Estilos para tema claro */
+.light-theme {
+	background-color: white;
+	color: black;
+}
 
+/* Estilos para tema escuro */
+.dark-theme {
+	background-color: #3f3f3f;
+	color: white;
+	
+}
 .project {
 	mix-blend-mode: normal;
 	border-radius: 20px;
@@ -11,8 +22,14 @@
 	text-decoration: none;
 }
 
-.project:hover {
+.light-theme .project:hover {
 	background: #fafafa;
+	opacity: 1;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.dark-theme .project:hover {
+	background: #4f4e4e;
 	opacity: 1;
 	transition: background-color 0.3s ease-in-out;
 }
@@ -34,7 +51,7 @@
 	width: 100%;
 }
 
-.project-title {
+.light-theme .project-title {
 	font-family: var(--secondary-font);
 	color: var(--primary-color);
 	font-size: 16px;
@@ -43,14 +60,35 @@
 	font-weight: 700;
 }
 
-.project-description {
+.light-theme .project-description {
 	color: var(--secondary-color);
 }
 
-.project-link {
+.light-theme .project-link {
 	display: flex;
 	align-items: center;
 	color: var(--secondary-color);
+	font-size: 12px;
+	padding-top: 20px;
+}
+
+.dark-theme .project-title {
+	font-family: var(--secondary-font);
+	color: var(--tertiary-color);
+	font-size: 16px;
+	padding-top: 15px;
+	margin-bottom: 1em;
+	font-weight: 700;
+}
+
+.dark-theme .project-description {
+	color: var(--tertiary-color);
+}
+
+.dark-theme .project-link {
+	display: flex;
+	align-items: center;
+	color: var(--tertiary-color);
 	font-size: 12px;
 	padding-top: 20px;
 }

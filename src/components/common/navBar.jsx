@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./styles/navBar.css";
 
 const NavBar = (props) => {
-	const { active } = props;
+	const { active, darkMode, toggleDarkMode } = props;
 
 	return (
 		<React.Fragment>
@@ -60,7 +60,16 @@ const NavBar = (props) => {
 						</ul>
 					</div>
 				</nav>
+				<button onClick={toggleDarkMode} className="dark-mode-switch">
+					<input type="checkbox" id="theme-toggle" className="checkbox" checked={darkMode} onChange={toggleDarkMode} />
+					<label htmlFor="theme-toggle" className="label">
+						<span className="icon-moon">🌙</span>
+						<span className="icon-sun">☀️</span>
+						<div className="ball"></div>
+					</label>
+				</button>
 			</div>
+
 		</React.Fragment>
 	);
 };

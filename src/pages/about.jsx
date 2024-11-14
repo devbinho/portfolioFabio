@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 import NavBar from "../components/common/navBar";
@@ -11,7 +11,9 @@ import SEO from "../data/seo";
 
 import "./styles/about.css";
 
-const About = () => {
+const About = (props) => {
+		// Estado para armazenar o tema atual
+		const {darkMode, toggleDarkMode} = props 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -28,16 +30,15 @@ const About = () => {
 					content={currentSEO.keywords.join(", ")}
 				/>
 			</Helmet>
-
+			<div className={darkMode ? 'dark-theme' : 'light-theme'}>
 			<div className="page-content">
-				<NavBar active="about" />
 				<div className="content-wrapper">
 					<div className="about-logo-container">
 						<div className="about-logo">
 							<Logo width={46} />
 						</div>
 					</div>
-
+					<NavBar active="about" darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 					<div className="about-container">
 						<div className="about-main">
 							<div className="about-right-side">
@@ -74,6 +75,7 @@ const About = () => {
 						<Footer />
 					</div>
 				</div>
+			</div>
 			</div>
 		</React.Fragment>
 	);

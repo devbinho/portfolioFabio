@@ -4,9 +4,7 @@ import { Helmet } from "react-helmet";
 import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-	faTwitter,
 	faGithub,
-	faStackOverflow,
 	faInstagram,
 	faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
@@ -14,22 +12,21 @@ import {
 import Logo from "../components/common/logo";
 import Footer from "../components/common/footer";
 import NavBar from "../components/common/navBar";
-import Article from "../components/homepage/article";
 import Works from "../components/homepage/works";
 import AllProjects from "../components/projects/allProjects";
 
 import INFO from "../data/user";
 import SEO from "../data/seo";
-import myArticles from "../data/articles";
 
 import "./styles/homepage.css";
 import ContactForm from "../components/homepage/contactForm";
 
-const Homepage = () => {
+const Homepage = (props) => {
 	const [stayLogo, setStayLogo] = useState(false);
 	const [logoSize, setLogoSize] = useState(80);
 	const [oldLogoSize, setOldLogoSize] = useState(80);
-
+	// Estado para armazenar o tema atual
+	const {darkMode, toggleDarkMode} = props 
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -71,7 +68,7 @@ const Homepage = () => {
 	};
 
 	return (
-		<React.Fragment>
+		<React.Fragment >
 			<Helmet>
 				<title>{INFO.main.title}</title>
 				<meta name="description" content={currentSEO.description} />
@@ -80,103 +77,106 @@ const Homepage = () => {
 					content={currentSEO.keywords.join(", ")}
 				/>
 			</Helmet>
-
-			<div className="page-content">
-				<NavBar active="home" />
-				<div className="content-wrapper">
-					<div className="homepage-logo-container">
-						<div style={logoStyle}>
-							<Logo width={logoSize} link={false} />
-						</div>
-					</div>
-
-					<div className="homepage-container">
-						<div className="homepage-first-area">
-							<div className="homepage-first-area-left-side">
-								<div className="title homepage-title">
-									{INFO.homepage.title}
-								</div>
-
-								<div className="subtitle homepage-subtitle">
-									{INFO.homepage.description}
-								</div>
+			<div className={darkMode === true ? 'dark-theme' : 'light-theme'}>
+				<div className="page-content">
+			<NavBar active="home" darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+					<div className="content-wrapper">
+						<div className="homepage-logo-container">
+							<div style={logoStyle}>
+								<Logo width={logoSize} link={false} />
 							</div>
+						</div>
 
-							<div className="homepage-first-area-right-side">
-								<div className="homepage-image-container">
-									<div className="homepage-image-wrapper">
-										<img
-											src="homepage.jpg"
-											alt="about"
-											className="homepage-image"
-										/>
+						<div className="homepage-container">
+							<div className="homepage-first-area">
+
+								<div className="homepage-first-area-left-side">
+									<div className="title homepage-title">
+										{INFO.homepage.title}
+									</div>
+
+									<div className="subtitle homepage-subtitle">
+										{INFO.homepage.description}
+									</div>
+								</div>
+
+								<div className="homepage-first-area-right-side">
+									<div className="homepage-image-container">
+										<div className="homepage-image-wrapper">
+											<img
+												src="homepage.jpg"
+												alt="about"
+												className="homepage-image"
+											/>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 
-						<div className="homepage-socials">
-							<a
-								href={INFO.socials.linkedin}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faLinkedinIn}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.github}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faGithub}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={INFO.socials.instagram}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faInstagram}
-									className="homepage-social-icon"
-								/>
-							</a>
-							<a
-								href={`mailto:${INFO.main.email}`}
-								target="_blank"
-								rel="noreferrer"
-							>
-								<FontAwesomeIcon
-									icon={faMailBulk}
-									className="homepage-social-icon"
-								/>
-							</a>
-						</div>
-
-						<div className="homepage-projects">
-							<AllProjects />
-						</div>
-
-						<div className="homepage-after-title">
-							<div className="homepage-articles">
-								<ContactForm />
+							<div className="homepage-socials">
+								<a
+									href={INFO.socials.linkedin}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faLinkedinIn}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.github}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faGithub}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={INFO.socials.instagram}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faInstagram}
+										className="homepage-social-icon"
+									/>
+								</a>
+								<a
+									href={`mailto:${INFO.main.email}`}
+									target="_blank"
+									rel="noreferrer"
+								>
+									<FontAwesomeIcon
+										icon={faMailBulk}
+										className="homepage-social-icon"
+									/>
+								</a>
 							</div>
 
-							<div className="homepage-works">
-								<Works />
+							<div className="homepage-projects">
+								<AllProjects />
 							</div>
-						</div>
 
-						<div className="page-footer">
-							<Footer />
+							<div className="homepage-after-title">
+								<div className="homepage-articles">
+									<ContactForm />
+								</div>
+
+								<div className="homepage-works">
+									<Works />
+								</div>
+							</div>
+
+							<div className="page-footer">
+								<Footer />
+							</div>
 						</div>
 					</div>
 				</div>
+
 			</div>
 		</React.Fragment>
 	);

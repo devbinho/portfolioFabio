@@ -1,5 +1,34 @@
 @import "../../data/styles.css";
 
+/* Estilos para tema claro */
+.light-theme {
+	background-color: white;
+	color: black;
+}
+
+/* Estilos para tema escuro */
+.dark-theme {
+	background-color: #3f3f3f;
+	color: white;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Alinha o NavBar à esquerda e o botão à direita */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    padding: 10px 20px; /* Ajuste de padding conforme necessário */
+}
+
+.dark-mode-button {
+    padding: 8px 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 .homepage-logo-container {
 	display: flex;
 	justify-content: left;
@@ -58,15 +87,26 @@
 	padding-top: 30px;
 }
 
-.homepage-social-icon {
+.light-theme .homepage-social-icon {
 	padding-right: 20px;
 	font-size: 25px;
 	transition: color 0.2s ease-in-out;
 	color: var(--secondary-color);
 }
 
-.homepage-social-icon:hover {
+.light-theme .homepage-social-icon:hover {
 	color: var(--primary-color);
+}
+
+.dark-theme .homepage-social-icon {
+	padding-right: 20px;
+	font-size: 25px;
+	transition: color 0.2s ease-in-out;
+	color: var(--quaternary-color);
+}
+
+.dark-theme .homepage-social-icon:hover {
+	color: var(--tertiary-color);
 }
 
 .homepage-after-title {

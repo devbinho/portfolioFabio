@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
 import NavBar from "../components/common/navBar";
@@ -11,7 +11,8 @@ import SEO from "../data/seo";
 
 import "./styles/contact.css";
 
-const Contact = () => {
+const Contact = (props) => {
+	const {darkMode, toggleDarkMode} = props 	
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -28,9 +29,9 @@ const Contact = () => {
 					content={currentSEO.keywords.join(", ")}
 				/>
 			</Helmet>
-
+			<div className={darkMode ? 'dark-theme' : 'light-theme'}>
 			<div className="page-content">
-				<NavBar active="contact" />
+			<NavBar active="contact" darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 				<div className="content-wrapper">
 					<div className="contact-logo-container">
 						<div className="contact-logo">
@@ -54,6 +55,7 @@ const Contact = () => {
 						<Footer />
 					</div>
 				</div>
+			</div>
 			</div>
 		</React.Fragment>
 	);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faFaceSadTear } from "@fortawesome/free-regular-svg-icons";
@@ -10,15 +10,19 @@ import INFO from "../data/user";
 
 import "./styles/404.css";
 
-const Notfound = () => {
+const Notfound = (props) => {
+		// Estado para armazenar o tema atual
+		const {darkMode, toggleDarkMode} = props 
+	
 	useEffect(() => {
 		document.title = `404 | ${INFO.main.title}`;
 	}, []);
 
 	return (
 		<React.Fragment>
+			<div className={darkMode ? 'dark-theme' : 'light-theme'}>
 			<div className="not-found page-content">
-				<NavBar />
+			<NavBar active="home" darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
 				<div className="content-wrapper">
 					<div className="notfound-logo-container">
 						<div className="projects-logo">
@@ -43,6 +47,7 @@ const Notfound = () => {
 						</div>
 					</div>
 				</div>
+			</div>
 			</div>
 		</React.Fragment>
 	);
