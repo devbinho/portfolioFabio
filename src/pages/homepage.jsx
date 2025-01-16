@@ -19,7 +19,7 @@ import INFO from "../data/user";
 import SEO from "../data/seo";
 
 import "./styles/homepage.css";
-import ContactForm from "../components/homepage/contactForm";
+
 
 const Homepage = (props) => {
 	const [stayLogo, setStayLogo] = useState(false);
@@ -161,10 +161,6 @@ const Homepage = (props) => {
 							</div>
 
 							<div className="homepage-after-title">
-								<div className="homepage-articles">
-									<ContactForm />
-								</div>
-
 								<div className="homepage-works">
 									<Works />
 								</div>
